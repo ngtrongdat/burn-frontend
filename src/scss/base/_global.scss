@@ -1,0 +1,42 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $base-font !important;
+  font-size: $base-font-size !important;
+  line-height: $line-height !important;
+  color: $text-color !important;
+  background-color: $body-bg !important;
+  overflow-x: hidden;
+}
+
+a, a:hover, a:focus, a:active {
+  color: $text-color;
+  outline: none;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+button:focus {
+  outline: none;
+}
+
+main {
+  @include media-breakpoint-down(sm) {
+    margin-top: 50px;
+  }
+}
+
+section {
+  overflow: hidden;
+}
+
+.container {
+  @media (min-width: 1400px) {
+    max-width: 1110px !important;
+  }
+}

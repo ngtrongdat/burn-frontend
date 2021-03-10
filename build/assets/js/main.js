@@ -1,0 +1,2 @@
+$(document).ready((function(){$("#gif-click").hide(),$("#click").click((function(){$("#click").hide(),$("#gif-click").show(),$("#pic-click").hide()})),$("#click").data("clicked",!0)&&$("#gif-click").click((function(){$("#click").show(),$("#gif-click").hide(),$("#pic-click").show()})),$(window).scroll((function(){var c=$("#header");$(window).scrollTop()>=200?c.addClass("fixed"):c.removeClass("fixed")}))}));
+//# sourceMappingURL=main.js.map
