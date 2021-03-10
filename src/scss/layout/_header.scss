@@ -143,8 +143,8 @@
     }
   }
 
-  @media (min-width: 992px) {
-    .navbar-expand-lg {
+  @media (min-width: 768px) {
+    .navbar-expand-sm {
       flex-wrap: nowrap;
       justify-content: flex-start;
       .navbar-nav {
