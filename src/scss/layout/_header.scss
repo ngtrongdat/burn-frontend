@@ -5,7 +5,6 @@
   z-index: 999;
   background-color: transparent;
   @include transition(background-color 0.3s ease);
-  overflow: hidden;
   &.fixed {
     background-color: white;
   }
@@ -21,23 +20,60 @@
       padding-right: 15px;
     }
     .nav-item {
+      position: relative;
+      @include media-breakpoint-up(sm) {
+        margin-left: 2.5rem;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          @include translate(0, -50%);
+          display: inline-block;
+          background: url("../images/icon/chevron-down.svg") no-repeat center center / 100% auto;
+          width: 10px;
+          height: 12px;
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 15%;
+          right: 15%;
+          height: 1px;
+          background-color: rgba(255,57,57,0.3);
+        }
+      }
       .nav-link {
+        display: block;
         background-color: transparent;
         font-size: 1rem;
         font-weight: 600;
-        padding: 10px 15px;
-        margin-left: 2.5rem;
+        padding: 28px 20px 28px 15px;
         @include transition(all, .25s);
         @include media-breakpoint-down(sm) {
           display: block;
-          margin: 0.5rem 0;
+          padding: 10px;
           text-align: center;
         }
       }
-
       &.active, &:hover {
         .nav-link {
           color: $red;
+        }
+      }
+      &:hover {
+        .nav-menu {
+          visibility: visible;
+          opacity: 1;
+          @include transform(translate(0, 0));
+          @include media-breakpoint-down(sm) {
+            height: auto;
+          }
         }
       }
     }
@@ -81,13 +117,6 @@
     margin-bottom: 0;
     list-style: none;
     margin-left: auto;
-    .nav-link {
-      padding-right: 0;
-      padding-left: 0;
-    }
-    .dropdown-menu {
-      position: static;
-    }
   }
 
   .navbar-collapse {
@@ -95,6 +124,7 @@
     flex-grow: 1;
     align-items: center;
     @include media-breakpoint-down(sm) {
+      height: 100vh;
       border-top: 1px solid rgba(255,57,57,0.1);
       background-color: white;
       margin: 0 -15px;
@@ -137,6 +167,39 @@
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(74, 85, 104)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
   }
+
+  .nav-menu {
+    @include media-breakpoint-down(sm) {
+
+    }
+    @include media-breakpoint-up(sm) {
+      position: absolute;
+      left: 50%;
+      width: 10rem;
+      @include transform(translate(0, 30px));
+      padding: 15px 0;
+      margin-left: -5rem;
+      z-index: 1;
+      visibility: hidden;
+      opacity: 0;
+    }
+    background-color: rgba(255,255,255,0.75);
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    @include transition(all 0.3s ease);
+    > li {
+      > a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        &.active, &:hover, &:focus {
+          color: $red;
+        }
+      }
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .navbar-toggler {
       transition: none;
@@ -151,10 +214,6 @@
         flex-direction: row;
         .dropdown-menu {
           position: absolute;
-        }
-        .nav-link {
-          padding-right: 0.5rem;
-          padding-left: 0.5rem;
         }
       }
       .navbar-collapse {

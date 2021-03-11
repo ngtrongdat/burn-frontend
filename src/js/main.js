@@ -1,20 +1,20 @@
 // Your main script
 $(document).ready(function () {
 
-  $('#gif-click').hide();
-  $('#click').click(function() {
-    $('#click').hide();
-    $('#gif-click').show();
-    $('#pic-click').hide();
-  });
-
-  if ($('#click').data("clicked", true)) {
-    $('#gif-click').click(function() {
-      $('#click').show();
-      $('#gif-click').hide();
-      $('#pic-click').show();
-    });
-  };
+  // $('#gif-click').hide();
+  // $('#click').click(function() {
+  //   $('#click').hide();
+  //   $('#gif-click').show();
+  //   $('#pic-click').hide();
+  // });
+  //
+  // if ($('#click').data("clicked", true)) {
+  //   $('#gif-click').click(function() {
+  //     $('#click').show();
+  //     $('#gif-click').hide();
+  //     $('#pic-click').show();
+  //   });
+  // };
 
   $(window).scroll(function() {
     var nav = $('#header');
@@ -24,6 +24,10 @@ $(document).ready(function () {
     } else {
       nav.removeClass('fixed');
     }
+  });
+
+  $('.navbar-nav a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
   });
   
 });
