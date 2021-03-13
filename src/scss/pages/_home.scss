@@ -1,6 +1,6 @@
 #burn-welcome {
   position: relative;
-  background: linear-gradient(248.66deg, #FFFFF4 0%, #FFF3FD 100%);
+  background: linear-gradient(248.66deg, #fffff4 0%, #fff3fd 100%);
   padding: 190px 0;
   @include media-breakpoint-down(lg) {
     padding: 150px 0;
@@ -12,13 +12,14 @@
     padding: 50px 0;
   }
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     bottom: 0;
     width: 75%;
     height: 600px;
-    background: url("../images/welcome/pattern.svg") no-repeat center center / 100% auto;
+    background: url("../images/welcome/pattern.svg") no-repeat center center /
+      100% auto;
     @include media-breakpoint-down(xl) {
       height: 500px;
     }
@@ -55,7 +56,8 @@
       @include translate(-50%, -50%);
       width: 90px;
       height: 90px;
-      background: url("../images/icon/play.svg") no-repeat center center / 100% auto;
+      background: url("../images/icon/play.svg") no-repeat center center / 100%
+        auto;
       border: none;
       z-index: 1;
       cursor: pointer;
@@ -89,7 +91,7 @@
 }
 
 #burn-feature {
-  background: linear-gradient(249.72deg, #0A1B30 11.33%, #09192C 91.99%);
+  background: linear-gradient(249.72deg, #0a1b30 11.33%, #09192c 91.99%);
   .feature-title {
     position: relative;
     color: white;
@@ -97,14 +99,15 @@
     text-align: center;
     padding-bottom: 10px;
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 50%;
       @include translate(-50%, 0);
       width: 227px;
       height: 11px;
-      background: url("../images/icon/divider.png") no-repeat center center / 100% auto;
+      background: url("../images/icon/divider.png") no-repeat center center /
+        100% auto;
     }
   }
   .feature-item {
@@ -135,7 +138,7 @@
 }
 
 #burn-intro {
-  background: linear-gradient(248.66deg, #FFFFF4 0%, #FFF3FD 100%);
+  background: linear-gradient(248.66deg, #fffff4 0%, #fff3fd 100%);
   .page-text {
     @include media-breakpoint-up(sm) {
       width: 60%;
@@ -178,7 +181,9 @@
     @include media-breakpoint-down(sm) {
       margin-bottom: 4rem;
     }
-    &.item-1, &.item-2, &.item-3 {
+    &.item-1,
+    &.item-2,
+    &.item-3 {
       @include media-breakpoint-up(sm) {
         margin-bottom: 100px;
       }
@@ -196,5 +201,22 @@
     line-height: 1.375;
     font-weight: bold;
     text-align: center;
+  }
+}
+
+h1,
+span {
+  &.logo {
+    font-family: "Tumbly";
+    color: $red;
+    &.logo-header {
+      font-size: 45px;
+    }
+    &.logo-footer {
+      font-size: 40px;
+    }
+    &.logo-copyright {
+      font-size: 16px;
+    }
   }
 }
